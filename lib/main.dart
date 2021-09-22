@@ -3,42 +3,54 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
       title: "Contador de Pessoas",
-      home: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text("Pessoas: 0",
-              style: TextStyle(
-                  color: Colors.red.shade800, fontWeight: FontWeight.bold)),
-          Row(
+      home: Stack(
+        children: [
+          Image.asset("images/restaurant.jpg",
+              fit: BoxFit.cover, height: 1000.0),
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                child: Text(
-                  "+1",
+            children: <Widget>[
+              Text("Pessoas: 0",
                   style: TextStyle(
-                    fontSize: 40.0,
-                    color: Colors.red,
+                      color: Colors.white, fontWeight: FontWeight.bold)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextButton(
+                      child: Text(
+                        "+1",
+                        style: TextStyle(
+                          fontSize: 40.0,
+                          color: Colors.white,
+                        ),
+                      ),
+                      onPressed: (() => {}),
+                    ),
                   ),
-                ),
-                onPressed: (() => {}),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextButton(
+                      child: Text(
+                        "-1",
+                        style: TextStyle(
+                          fontSize: 40.0,
+                          color: Colors.white,
+                        ),
+                      ),
+                      onPressed: (() => {}),
+                    ),
+                  ),
+                ],
               ),
-              TextButton(
-                child: Text(
-                  "-1",
+              Text("Pode Entrar!",
                   style: TextStyle(
-                    fontSize: 40.0,
-                    color: Colors.red,
-                  ),
-                ),
-                onPressed: (() => {}),
-              ),
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 30.0)),
             ],
-          ),
-          Text("Pode Entrar!",
-              style: TextStyle(
-                  color: Colors.red.shade800,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 30.0)),
+          )
         ],
       )));
 }
